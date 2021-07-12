@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="title"></p>
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+    else{
+        console.log("Something went wrong!" + this.status);
+    }
+};
+
+xhttp.open("GET", "../books.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    var x = xmlDoc.getElementsByTagName("title");
+    document.getElementById("books").innerHTML =
+    x[3].childNodes[0].nodeValue;
+}
+</script>
+
+</body>
+</html>

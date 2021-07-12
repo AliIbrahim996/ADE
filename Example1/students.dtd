@@ -1,0 +1,5 @@
+<!ELEMENT students (student+)>
+<!ELEMENT student (name,gender)>
+<!ATTLIST student id NMTOKEN #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
