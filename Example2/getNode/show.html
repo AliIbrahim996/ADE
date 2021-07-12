@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p id="title"></p>
+<p id="books"></p>
 <script>
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -19,9 +19,8 @@ xhttp.send();
 
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
-    var x = xmlDoc.getElementsByTagName("title");
-    document.getElementById("books").innerHTML =
-    x[3].childNodes[0].nodeValue;
+    var x = xmlDoc.getElementsByTagName("author")[0];
+    document.getElementById("books").innerHTML = x.nodeName;
 }
 </script>
 
