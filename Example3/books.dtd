@@ -1,9 +1,0 @@
-<!ELEMENT bookstore (book+)>
-<!ELEMENT book (title,author+,year,price)>
-<!ATTLIST book category NMTOKEN #REQUIRED>
-<!ATTLIST book cover NMTOKEN #IMPLIED>
-<!ELEMENT title (#PCDATA)>
-<!ATTLIST title lang NMTOKEN #REQUIRED>
-<!ELEMENT author (#PCDATA)>
-<!ELEMENT year (#PCDATA)>
-<!ELEMENT price (#PCDATA)>
