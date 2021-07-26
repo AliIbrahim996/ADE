@@ -20,7 +20,7 @@ xhttp.send();
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
     var x = xmlDoc.getElementsByTagName("author")[0];
-    document.getElementById("books").innerHTML = x.nodeName;
+    document.getElementById("books").innerHTML = x.nodeName + "<br/>" + x.nodeValue;
 }
 </script>
 

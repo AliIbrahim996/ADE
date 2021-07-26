@@ -14,17 +14,22 @@
     xhttp.send();
     
     function myFunction(xml) {
-        var x, y, i, xlen, xmlDoc, txt;
+        var x, i, xmlDoc, txt;
         xmlDoc = xml.responseXML;
-        x = xmlDoc.getElementsByTagName("book")[0];
-        xlen = x.childNodes.length;
-        y = x.firstChild;
         txt = "";
-        for (i = 0; i < xlen; i++) {
-            if (y.nodeType == 1) {
-                txt += i + " " + y.nodeName + "<br>";
+        x = xmlDoc.documentElement.childNodes;
+        for (i = 0; i < x.length; i++) { 
+            if (x[i].nodeType == 1) {
+                var xlen = x[i].childNodes.length,
+                y = x[i].firstChild;
+                for(var index = 0; index < xlen ; index++){
+                    if(y.nodeType!=2)
+                        txt += index + " Name:   " + y.nodeName + " Type:   " + y.nodeType
+                        + " Value:   "+ y.nodeValue+ "<br>" ;
+                    y = y.nextSibling;
+                }
+
             }
-            y = y.nextSibling;
         }
         document.getElementById("title").innerHTML = txt; 
     }
